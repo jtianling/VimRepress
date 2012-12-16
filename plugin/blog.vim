@@ -500,7 +500,7 @@ class ContentStruct(object):
                 field = dict(key=G.CUSTOM_FIELD_KEY, value=rawtext)
                 struct["custom_fields"].append(field)
 
-            struct["description"] = self.html_text = markdown.markdown(rawtext)
+            struct["description"] = self.html_text = markdown.markdown(rawtext, ['toc(marker=$TOC$)', 'codehilite'])
         else:
             struct["description"] = self.html_text = rawtext
 
